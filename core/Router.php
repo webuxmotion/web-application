@@ -19,10 +19,24 @@ class Router {
   }
 
   public static function dispatch($url) {
+    $url = self::removeQueryString($url);
+
     if (self::matchRoute($url)) {
-      echo 'OK';
+      $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
+      $action = self::$route['action'] . 'Action';
+
+      if (class_exists($controller)) {
+        $controllerObject = new $controller(self::$route);
+        if (method_exists($controllerObject, $action)) {
+          $controllerObject->$action();
+        } else {
+          throw new \Exception("Method {$controller}::{$action} not found", 404);
+        }
+      } else {
+        throw new \Exception("Controller {$controller} not found", 404);
+      }
     } else {
-      echo 'NO';
+      throw new \Exception("Page not found", 404);
     }
   }
 
@@ -47,13 +61,25 @@ class Router {
         }
 
         $route['controller'] = upperCamelCase($route['controller']);
-        $route['action'] = lowerCamelCase($route['action']) . 'Action';
+        $route['action'] = lowerCamelCase($route['action']);
 
-        debug($route);
+        self::$route = $route;
        
         return true;
       }
     }
     return false;
+  }
+
+  protected static function removeQueryString($url) {
+    if ($url) {
+      $params = explode('&', $url, 2);
+
+      if (!str_contains($params[0], '=')) {
+        return rtrim($params[0], '/');
+      }
+    }
+
+    return '';
   }
 }
