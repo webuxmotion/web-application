@@ -10,8 +10,7 @@ abstract class Controller {
     public null | object $model = null;
 
     public function __construct(public $route = []) {
-        $this->getModel();
-        $this->getView();
+        
     }
 
     public function getModel() {
@@ -24,6 +23,9 @@ abstract class Controller {
 
     public function getView() {
         $view = $this->view ?: $this->route['action'];
+
+        $viewObject = new View($this->route, $this->layout, $view, $this->meta);
+        $viewObject->render($this->data);
     }
 
     public function set($data) {
