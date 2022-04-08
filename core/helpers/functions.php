@@ -23,4 +23,8 @@ function lowerCamelCase($name) {
   return $name;
 }
 
+function h($str) {
+  return htmlspecialchars($str);
+}
+
 ?>
