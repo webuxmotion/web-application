@@ -17,7 +17,7 @@ $(function() {
 	});
 
 	$('#top').click(function() {
-		$('body, html').animate({scrollTop:0}, 700);
+		$('body, html').animate({scrollTop:0}, 300);
 	});
 
 	$('.sidebar-toggler .btn').click(function() {
