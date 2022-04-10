@@ -74,7 +74,7 @@ class View {
                 ->getDatabase()
                 ->getLogger();
 
-            debug($logs);
+                debug($logs);
         }
     }
 }

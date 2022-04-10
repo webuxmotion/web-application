@@ -4,4 +4,6 @@ namespace app\models;
 
 use core\Model;
 
-class AppModel extends Model {}
+class AppModel extends Model {
+    
+}
