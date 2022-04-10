@@ -29,7 +29,7 @@ abstract class Controller {
     }
 
     public function set($data) {
-        $this->data = $data;
+        $this->data = array_merge($data, $this->data);
     }
 
     public function setMeta($title = '', $description = '', $keywords = '') {

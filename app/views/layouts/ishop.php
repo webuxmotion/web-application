@@ -14,7 +14,7 @@
 	<?=$this->getMeta()?>
 </head>
 <body>
-	<?=$this->getPart('header')?>
+	<?=$this->getPart('header', ['languageSwitcher' => $languageSwitcher])?>
 
 	<?=$content?>
 

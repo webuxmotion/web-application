@@ -35,18 +35,7 @@
                         </ul>
                     </div>
 
-                    <div class="dropdown d-inline-block">
-                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                            <img src="<?=PATH?>/assets-ishop/img/ua.png" alt="">
-                        </a>
-                        <ul class="dropdown-menu" id="languages">
-                            <li>
-                                <button class="dropdown-item" data-langcode="en">
-                                    <img src="<?=PATH?>/assets-ishop/img/en.png" alt="">
-                                English</button>
-                            </li>
-                        </ul>
-                    </div>
+                    <?=$languageSwitcher?>
 
                 </div>
             </div>

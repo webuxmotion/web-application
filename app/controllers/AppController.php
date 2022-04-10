@@ -10,11 +10,17 @@ use app\widgets\Language\Language;
 class AppController extends Controller {
     public function __construct($route) {
         parent::__construct($route);
+
         new AppModel();
 
-        App::$app->setProperty('languages', Language::getLanguages());
+        $langs = Language::getLanguages();
+        $lang = Language::getLanguage($langs);
 
-        $lang = Language::getLanguage(App::$app->getProperty('languages'));
-        debug($lang);
+        App::$app->setProperty('languages', $langs);
+        App::$app->setProperty('language', $lang);
+
+        $languageSwitcher = new Language();
+
+        $this->set(compact('languageSwitcher'));
     }
 }
