@@ -1,5 +1,7 @@
 <?php
 
+use core\App;
+
 function debug($data, $die = false) {
   echo '<pre>' . print_r($data, 1) . '</pre>';
 
@@ -25,6 +27,28 @@ function lowerCamelCase($name) {
 
 function h($str) {
   return htmlspecialchars($str);
+}
+
+function redirect($http = false) {
+  if ($http) {
+    $redirect = $http;
+  } else {
+    $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : PATH;
+  }
+  header("Location: $redirect");
+  die;
+}
+
+function debugProps() {
+  debug(App::$app->getProperties());
+}
+
+function baseUrl() {
+  return PATH . '/' . (
+    !App::$app->getProperty('language')['base']
+    ? App::$app->getProperty('language')['code'] . '/'
+    : ''
+  );
 }
 
 ?>

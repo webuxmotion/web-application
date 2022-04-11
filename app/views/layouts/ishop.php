@@ -3,7 +3,7 @@
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<base href="/">
+	<base href="<?=baseUrl()?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<?=PATH?>/assets-ishop/bootstrap/css/bootstrap.min.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
