@@ -51,4 +51,30 @@ function baseUrl() {
   );
 }
 
+function get($key, $type = 'i') {
+  $param = $key;
+  $$param = $_GET[$param] ?? '';
+
+  if ($type == 'i') {
+    return (int)$$param;
+  } elseif ($type == 'f') {
+    return (float)$$param;
+  } else {
+    return trim($$param);
+  }
+}
+
+function post($key, $type = 's') {
+  $param = $key;
+  $$param = $_POST[$param] ?? '';
+
+  if ($type == 'i') {
+    return (int)$$param;
+  } elseif ($type == 'f') {
+    return (float)$$param;
+  } else {
+    return trim($$param);
+  }
+}
+
 ?>

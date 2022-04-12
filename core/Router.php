@@ -22,6 +22,7 @@ class Router {
     $url = self::removeQueryString($url);
 
     if (self::matchRoute($url)) {
+      // need for switch languages
       if (!empty(self::$route['lang'])) {
         App::$app->setProperty('lang', self::$route['lang']);
       }
