@@ -2,6 +2,10 @@
 
 use core\App;
 
+function __($key) {
+  return \core\Language::get($key);
+}
+
 function debug($data, $die = false) {
   echo '<pre>' . print_r($data, 1) . '</pre>';
 
