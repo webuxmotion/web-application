@@ -14,6 +14,6 @@ class MainController extends AppController {
         $products = $this->model->getHits($lang, 3);
 
         $this->set(compact('slides', 'products'));
-        $this->setMeta('Головна сторінка', 'description...', 'keywords...');
+        $this->setMeta(__('main_index_meta_title'), 'description...', 'keywords...');
     }
 }
