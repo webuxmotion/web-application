@@ -1,14 +1,19 @@
 <?php
 
-namespace core;
+
+namespace wfm;
+
 
 use RedBeanPHP\R;
 
-class Db {
+class Db
+{
+
     use TSingleton;
 
-    private function __construct() {
-        $db = require_once CONFIG . '/db.php';
+    private function __construct()
+    {
+        $db = require_once CONFIG . '/config_db.php';
         R::setup($db['dsn'], $db['user'], $db['password']);
         if (!R::testConnection()) {
             throw new \Exception('No connection to DB', 500);
@@ -17,5 +22,9 @@ class Db {
         if (DEBUG) {
             R::debug(true, 3);
         }
+        R::ext('xdispense', function( $type ){
+            return R::getRedBean()->dispense( $type );
+        });
     }
+
 }

@@ -1,40 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<base href="<?=baseUrl()?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="<?=PATH?>/assets-ishop/bootstrap/css/bootstrap.min.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-	<link rel="stylesheet" href="<?=PATH?>/assets-ishop/css/magnific-popup.css">
-	<link rel="stylesheet" href="<?=PATH?>/assets-ishop/css/main.css">
-	<?=$this->getMeta()?>
-</head>
-<body>
-	<?=$this->getPart('header', ['languageSwitcher' => $languageSwitcher])?>
+<?php
+use wfm\View;
+/** @var $this View */
+?>
+<?php $this->getPart('parts/header'); ?>
 
-	<?=$content?>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <?php if (!empty($_SESSION['errors'])): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?php echo $_SESSION['errors']; unset($_SESSION['errors']); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
 
-	<?=$this->getPart('footer')?>
+            <?php if (!empty($_SESSION['success'])): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
 
-	<button id="top">
-		<i class="fas fa-angle-double-up"></i>
-	</button>
+<?php echo $this->content ?>
 
-	<script>
-		const PATH = '<?=PATH?>';
-	</script>
-	<script src="<?=PATH?>/assets-ishop/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-		crossorigin="anonymous"></script>
-	<script src="<?=PATH?>/assets-ishop/js/jquery.magnific-popup.min.js"></script>
-	<script src="<?=PATH?>/assets-ishop/js/main.js"></script>
-
-</body>
-</html>
-
-<?=$this->getDbLogs()?>
+<?php $this->getPart('parts/footer'); ?>

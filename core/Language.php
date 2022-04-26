@@ -1,26 +1,34 @@
 <?php
 
-namespace core;
 
-class Language {
-    public static array $langData = [];
-    public static array $langLayout = [];
-    public static array $langView = [];
+namespace wfm;
 
-    public static function load($langCode, $view) {
-        $langLayout = APP . "/languages/{$langCode}.php";
-        $langView = APP . "/languages/{$langCode}/{$view['controller']}/{$view['action']}.php";
 
-        if (file_exists($langLayout)) {
-            self::$langLayout = require $langLayout;
+class Language
+{
+    // массив со всеми переводными фразами страницы
+    public static array $lang_data = [];
+    // массив с переводными фразами шаблона
+    public static array $lang_layout = [];
+    // массив с переводными фразами вида
+    public static array $lang_view = [];
+
+    public static function load($code, $view)
+    {
+        $lang_layout = APP . "/languages/{$code}.php";
+        $lang_view = APP . "/languages/{$code}/{$view['controller']}/{$view['action']}.php";
+        if (file_exists($lang_layout)) {
+            self::$lang_layout = require_once $lang_layout;
         }
-        if (file_exists($langView)) {
-            self::$langView = require $langView;
+        if (file_exists($lang_view)) {
+            self::$lang_view = require_once $lang_view;
         }
-        self::$langData = array_merge(self::$langLayout, self::$langView);
+        self::$lang_data = array_merge(self::$lang_layout, self::$lang_view);
     }
 
-    public static function get($key) {
-        return self::$langData[$key] ?? $key;
+    public static function get($key)
+    {
+        return self::$lang_data[$key] ?? $key;
     }
+
 }

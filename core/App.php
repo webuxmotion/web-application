@@ -1,27 +1,32 @@
 <?php
 
-namespace core;
 
-class App {
-  public static $app;
+namespace wfm;
 
-  public function __construct() {
-    new ErrorHandler();
-    $query = urldecode($_SERVER['QUERY_STRING']);
-    $query = trim($query, '/');
-   
-    self::$app = Registry::getInstance();
-    $this->getParams();
-    Router::dispatch($query);
-  }
 
-  protected function getParams() {
-    $params = require_once CONFIG . '/params.php';
+class App
+{
 
-    if (!empty($params)) {
-      self::$app->setProperty('params', $params);
+    public static $app;
+
+    public function __construct()
+    {
+        $query = trim(urldecode($_SERVER['QUERY_STRING']), '/');
+        new ErrorHandler();
+        session_start();
+        self::$app = Registry::getInstance();
+        $this->getParams();
+        Router::dispatch($query);
     }
-  }
-}
 
-?>
+    protected function getParams()
+    {
+        $params = require_once CONFIG . '/params.php';
+        if (!empty($params)) {
+            foreach ($params as $k => $v) {
+                self::$app->setProperty($k, $v);
+            }
+        }
+    }
+
+}

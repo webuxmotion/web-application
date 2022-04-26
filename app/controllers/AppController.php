@@ -1,28 +1,37 @@
 <?php
 
+
 namespace app\controllers;
 
-use core\Controller;
-use core\App;
+
 use app\models\AppModel;
-use app\widgets\Language\Language;
+use app\models\Wishlist;
+use app\widgets\language\Language;
+use RedBeanPHP\R;
+use wfm\App;
+use wfm\Controller;
 
-class AppController extends Controller {
-    public function __construct($route) {
+class AppController extends Controller
+{
+
+    public function __construct($route)
+    {
         parent::__construct($route);
-
         new AppModel();
 
-        $langs = Language::getLanguages();
-        $lang = Language::getLanguage($langs);
+        App::$app->setProperty('languages', Language::getLanguages());
+        App::$app->setProperty('language', Language::getLanguage(App::$app->getProperty('languages')));
 
-        \core\Language::load($lang['code'], $this->route);
+        $lang = App::$app->getProperty('language');
+        \wfm\Language::load($lang['code'], $this->route);
 
-        App::$app->setProperty('languages', $langs);
-        App::$app->setProperty('language', $lang);
+        $categories = R::getAssoc("SELECT c.*, cd.* FROM category c 
+                        JOIN category_description cd
+                        ON c.id = cd.category_id
+                        WHERE cd.language_id = ?", [$lang['id']]);
+        App::$app->setProperty("categories_{$lang['code']}", $categories);
 
-        $languageSwitcher = new Language();
-
-        $this->set(compact('languageSwitcher'));
+        App::$app->setProperty('wishlist', Wishlist::get_wishlist_ids());
     }
+
 }
