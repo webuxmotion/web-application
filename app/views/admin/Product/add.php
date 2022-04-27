@@ -6,7 +6,7 @@
         <form action="" method="post">
 
             <div class="form-group">
-                <label class="required" for="parent_id">Категория</label>
+                <label class="required" for="parent_id">Категорія</label>
                 <?php new \app\widgets\menu\Menu([
                     'cache' => 0,
                     'cacheKey' => 'admin_menu_select',
@@ -24,14 +24,14 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label class="required" for="price">Цена</label>
-                        <input type="text" name="price" class="form-control" id="price" placeholder="Цена" value="<?= get_field_value('price') ?: 0 ?>">
+                        <label class="required" for="price">Ціна</label>
+                        <input type="text" name="price" class="form-control" id="price" placeholder="Ціна" value="<?= get_field_value('price') ?: 0 ?>">
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="old_price">Старая цена</label>
-                        <input type="text" name="old_price" class="form-control" id="old_price" placeholder="Старая цена" value="<?= get_field_value('old_price') ?: 0 ?>">
+                        <label for="old_price">Стара ціна</label>
+                        <input type="text" name="old_price" class="form-control" id="old_price" placeholder="Стара ціна" value="<?= get_field_value('old_price') ?: 0 ?>">
                     </div>
                 </div>
             </div>
@@ -39,21 +39,21 @@
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
                     <input class="custom-control-input" type="checkbox" id="status" name="status" checked>
-                    <label for="status" class="custom-control-label">Показывать на сайте</label>
+                    <label for="status" class="custom-control-label">Показувати на сайті</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
                     <input class="custom-control-input" type="checkbox" id="hit" name="hit">
-                    <label for="hit" class="custom-control-label">Хит</label>
+                    <label for="hit" class="custom-control-label">Хіт</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="is_download">Прикрепите загружаемый файл, чтобы товар стал цифровым</label>
+                        <label for="is_download">Прикріпіть файл, що завантажується, щоб товар став цифровим</label>
                         <select name="is_download" class="form-control select2 is-download" id="is_download" style="width: 100%;"></select>
                     </div>
                 </div>
@@ -63,10 +63,10 @@
                 <div class="col-md-12">
                     <div class="card card-outline card-success">
                         <div class="card-header">
-                            <h3 class="card-title">Основное фото</h3>
+                            <h3 class="card-title">Основне фото</h3>
                         </div>
                         <div class="card-body">
-                            <button class="btn btn-success" id="add-base-img" onclick="popupBaseImage(); return false;">Загрузить</button>
+                            <button class="btn btn-success" id="add-base-img" onclick="popupBaseImage(); return false;">Завантажити</button>
                             <div id="base-img-output" class="upload-images base-image"></div>
                         </div>
                         <!-- /.card-body -->
@@ -78,10 +78,10 @@
                 <div class="col-md-12">
                     <div class="card card-outline card-success">
                         <div class="card-header">
-                            <h3 class="card-title">Дополнительные фото</h3>
+                            <h3 class="card-title">Додаткові фото</h3>
                         </div>
                         <div class="card-body">
-                            <button class="btn btn-success" id="add-gallery-img" onclick="popupGalleryImage(); return false;">Загрузить</button>
+                            <button class="btn btn-success" id="add-gallery-img" onclick="popupGalleryImage(); return false;">Завантажити</button>
                             <div id="gallery-img-output" class="upload-images gallery-image"></div>
                         </div>
                         <!-- /.card-body -->
@@ -109,28 +109,28 @@
                             <div class="tab-pane fade <?php if ($lang['base']) echo 'active show' ?>" id="<?= $k ?>">
 
                                 <div class="form-group">
-                                    <label class="required" for="title">Наименование</label>
+                                    <label class="required" for="title">Найменування</label>
                                     <input type="text" name="product_description[<?= $lang['id'] ?>][title]" class="form-control" id="title" placeholder="Наименование товара" value="<?= get_field_array_value('product_description', $lang['id'], 'title') ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="description">Мета-описание</label>
-                                    <input type="text" name="product_description[<?= $lang['id'] ?>][description]" class="form-control" id="description" placeholder="Мета-описание" value="<?= get_field_array_value('product_description', $lang['id'], 'description') ?>">
+                                    <label for="description">Мета-опис</label>
+                                    <input type="text" name="product_description[<?= $lang['id'] ?>][description]" class="form-control" id="description" placeholder="Мета-опис" value="<?= get_field_array_value('product_description', $lang['id'], 'description') ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="keywords">Ключевые слова</label>
-                                    <input type="text" name="product_description[<?= $lang['id'] ?>][keywords]" class="form-control" id="keywords" placeholder="Ключевые слова" value="<?= get_field_array_value('product_description', $lang['id'], 'keywords') ?>">
+                                    <label for="keywords">Ключові слова</label>
+                                    <input type="text" name="product_description[<?= $lang['id'] ?>][keywords]" class="form-control" id="keywords" placeholder="Ключові слова" value="<?= get_field_array_value('product_description', $lang['id'], 'keywords') ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exerpt" class="required">Краткое описание</label>
-                                    <input type="text" name="product_description[<?= $lang['id'] ?>][exerpt]" class="form-control" id="exerpt" placeholder="Краткое описание" value="<?= get_field_array_value('product_description', $lang['id'], 'exerpt') ?>">
+                                    <label for="exerpt" class="required">Короткий опис</label>
+                                    <input type="text" name="product_description[<?= $lang['id'] ?>][exerpt]" class="form-control" id="exerpt" placeholder="Короткий опис" value="<?= get_field_array_value('product_description', $lang['id'], 'exerpt') ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="content">Описание товара</label>
-                                    <textarea name="product_description[<?= $lang['id'] ?>][content]" class="form-control editor" id="content" rows="3" placeholder="Описание товара"><?= get_field_array_value('product_description', $lang['id'], 'content') ?></textarea>
+                                    <label for="content">Опис товару</label>
+                                    <textarea name="product_description[<?= $lang['id'] ?>][content]" class="form-control editor" id="content" rows="3" placeholder="Опис товару"><?= get_field_array_value('product_description', $lang['id'], 'content') ?></textarea>
                                 </div>
 
                             </div>
@@ -140,7 +140,7 @@
                 <!-- /.card -->
             </div>
 
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button type="submit" class="btn btn-primary">Зберегти</button>
 
         </form>
 

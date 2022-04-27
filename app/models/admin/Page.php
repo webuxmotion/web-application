@@ -43,7 +43,7 @@ class Page extends AppModel
             $item['title'] = trim($item['title']);
             $item['content'] = trim($item['content']);
             if (empty($item['title'])) {
-                $errors .= "Не заполнено Наименование во вкладке {$lang_id}<br>";
+                $errors .= "Не заповнено Найменування у вкладці {$lang_id}<br>";
             }
             if (empty($item['content'])) {
                 $errors .= "Не заполнен Контент во вкладке {$lang_id}<br>";

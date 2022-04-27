@@ -14,12 +14,12 @@ class SliderController extends AppController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $this->model->update_slider();
-            $_SESSION['success'] = 'Слайдер обновлен';
+            $_SESSION['success'] = 'Слайдер оновлено';
             redirect();
         }
         $gallery = $this->model->get_slides();
-        $title = 'Управление слайдером';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Управління слайдером';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'gallery'));
     }
 

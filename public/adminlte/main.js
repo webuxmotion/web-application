@@ -1,12 +1,12 @@
 $(function () {
 
     $('.delete').click(function () {
-        let res = confirm('Подтвердите действие');
+        let res = confirm('Підтвердіть дію');
         if (!res) return false;
     });
 
     $(".is-download").select2({
-        placeholder: "Начните вводить наименование файла",
+        placeholder: "Почніть вводити назву файлу",
         minimumInputLength: 1,
         cache: true,
         ajax: {
@@ -33,7 +33,7 @@ $(function () {
 
     $('#is_download').on('select2:select', function () {
         $('.clear-download').remove();
-        $('#is_download').before('<p class="clear-download"><span class="btn btn-danger">Обычный товар</span></p>');
+        $('#is_download').before('<p class="clear-download"><span class="btn btn-danger">Звичайний товар</span></p>');
     });
 
     $('body').on('click', '.clear-download span', function () {

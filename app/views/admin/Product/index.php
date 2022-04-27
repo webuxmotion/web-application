@@ -2,7 +2,7 @@
 <div class="card">
 
     <div class="card-header">
-        <a href="<?= ADMIN ?>/product/add" class="btn btn-default btn-flat"><i class="fas fa-plus"></i> Добавить товар</a>
+        <a href="<?= ADMIN ?>/product/add" class="btn btn-default btn-flat"><i class="fas fa-plus"></i> Додати товар</a>
     </div>
 
     <div class="card-body">
@@ -14,10 +14,10 @@
                     <tr>
                         <th>ID</th>
                         <th>Фото</th>
-                        <th>Наименование</th>
-                        <th>Цена</th>
+                        <th>Найменування</th>
+                        <th>Ціна</th>
                         <th>Статус</th>
-                        <th>Цифровой товар</th>
+                        <th>Цифровий товар</th>
                         <td width="50"><i class="fas fa-pencil-alt"></i></td>
                         <td width="50"><i class="far fa-trash-alt"></i></td>
                     </tr>
@@ -39,7 +39,7 @@
                                 <?= $product['status'] ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>' ?>
                             </td>
                             <td>
-                                <?= $product['is_download'] ? 'Цифровой товар' : 'Обычный товар'; ?>
+                                <?= $product['is_download'] ? 'Цифровий товар' : 'Звичайний товар'; ?>
                             </td>
                             <td width="50">
                                 <a class="btn btn-info btn-sm"
@@ -60,7 +60,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p><?= count($products) ?> товар(ов) из: <?= $total; ?></p>
+                    <p><?= count($products) ?> товар(ів) з: <?= $total; ?></p>
                     <?php if ($pagination->countPages > 1): ?>
                         <?= $pagination; ?>
                     <?php endif; ?>
@@ -68,7 +68,7 @@
             </div>
 
         <?php else: ?>
-            <p>Товаров не найдено...</p>
+            <p>Товарів не знайдено...</p>
         <?php endif; ?>
 
     </div>

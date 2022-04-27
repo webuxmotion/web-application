@@ -12,8 +12,8 @@ class CacheController extends AppController
 
     public function indexAction()
     {
-        $title = 'Управление кэшем';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Керування кешем';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title'));
     }
 
@@ -32,7 +32,7 @@ class CacheController extends AppController
                 $cache->delete("ishop_page_menu_{$lang}");
             }
         }
-        $_SESSION['success'] = 'Выбранный кэш удален';
+        $_SESSION['success'] = 'Вибраний кеш видалено';
         redirect();
     }
 

@@ -7,18 +7,18 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Наименование</th>
-                <th>Описание</th>
+                <th>Найменування</th>
+                <th>Опис</th>
                 <td width="50"><i class="far fa-trash-alt"></i></td>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>
-                    Кэш категорий
+                Кеш категорій
                 </td>
                 <td>
-                    Меню категорий на сайте. Кэшируется на 1 час.
+                    Меню категорії на сайті. Кешується на 1 годину.
                 </td>
                 <td width="50">
                     <a class="btn btn-danger btn-sm delete"
@@ -29,10 +29,10 @@
             </tr>
             <tr>
                 <td>
-                    Кэш страниц
+                    Кеш сторінок
                 </td>
                 <td>
-                    Меню страниц в футере. Кэшируется на 1 час.
+                    Меню сторінок у футері. Кешується на 1 годину.
                 </td>
                 <td width="50">
                     <a class="btn btn-danger btn-sm delete"

@@ -23,8 +23,8 @@ class ProductController extends AppController
         $start = $pagination->getStart();
 
         $products = $this->model->get_products($lang, $start, $perpage);
-        $title = 'Список товаров';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Список товарів';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'products', 'pagination', 'total'));
     }
 
@@ -33,16 +33,16 @@ class ProductController extends AppController
         if (!empty($_POST)) {
             if ($this->model->product_validate()) {
                 if ($this->model->save_product()) {
-                    $_SESSION['success'] = 'Товар добавлен';
+                    $_SESSION['success'] = 'Товар доданий';
                 } else {
-                    $_SESSION['errors'] = 'Ошибка добавления товара';
+                    $_SESSION['errors'] = 'Помилка додавання товару';
                 }
             }
             redirect();
         }
 
-        $title = 'Новый товар';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Новий товар';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title'));
     }
 
@@ -53,9 +53,9 @@ class ProductController extends AppController
         if (!empty($_POST)) {
             if ($this->model->product_validate()) {
                 if ($this->model->update_product($id)) {
-                    $_SESSION['success'] = 'Товар сохранен';
+                    $_SESSION['success'] = 'Товар збережено';
                 } else {
-                    $_SESSION['errors'] = 'Ошибка обновления товара';
+                    $_SESSION['errors'] = 'Помилка поновлення товару';
                 }
             }
             redirect();
@@ -70,8 +70,8 @@ class ProductController extends AppController
 
         $lang = App::$app->getProperty('language')['id'];
         App::$app->setProperty('parent_id', $product[$lang]['category_id']);
-        $title = 'Редактирование товара';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Редагування товару';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'product', 'gallery'));
     }
 

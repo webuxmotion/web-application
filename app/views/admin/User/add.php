@@ -21,14 +21,14 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="required" for="name">Имя</label>
+                    <label class="required" for="name">Им'я</label>
                     <input type="text" name="name" class="form-control" id="name" value="<?= get_field_value('name') ?>">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="required" for="address">Адрес</label>
+                    <label class="required" for="address">Адреса</label>
                     <input type="text" name="address" class="form-control" id="address" value="<?= get_field_value('address') ?>">
                 </div>
             </div>
@@ -37,14 +37,14 @@
                 <div class="form-group">
                     <label class="required" for="role">Роль</label>
                     <select name="role" id="role" class="form-control">
-                        <option value="user">Пользователь</option>
-                        <option value="admin">Администратор</option>
+                        <option value="user">Користувач</option>
+                        <option value="admin">Адміністратор</option>
                     </select>
                 </div>
             </div>
 
             <div class="col">
-                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <button type="submit" class="btn btn-primary">Зберегти</button>
             </div>
 
         </form>

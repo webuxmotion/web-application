@@ -24,31 +24,31 @@
                             <div class="tab-pane fade <?php if ($lang['base']) echo 'active show' ?>" id="<?= $k ?>">
 
                                 <div class="form-group">
-                                    <label class="required" for="title">Наименование страницы</label>
+                                    <label class="required" for="title">Найменування сторінки</label>
                                     <input type="text" name="page_description[<?= $lang['id'] ?>][title]"
-                                           class="form-control" id="title" placeholder="Наименование страницы"
+                                           class="form-control" id="title" placeholder="Найменування сторінки"
                                            value="<?= h($page[$lang['id']]['title']) ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="description">Мета-описание</label>
+                                    <label for="description">Мета-опис</label>
                                     <input type="text" name="page_description[<?= $lang['id'] ?>][description]"
-                                           class="form-control" id="description" placeholder="Мета-описание"
+                                           class="form-control" id="description" placeholder="Мета-опис"
                                            value="<?= h($page[$lang['id']]['description']) ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="keywords">Ключевые слова</label>
+                                    <label for="keywords">Ключові слова</label>
                                     <input type="text" name="page_description[<?= $lang['id'] ?>][keywords]"
-                                           class="form-control" id="keywords" placeholder="Ключевые слова"
+                                           class="form-control" id="keywords" placeholder="Ключові слова"
                                            value="<?= h($page[$lang['id']]['keywords']) ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="content">Контент страницы</label>
+                                    <label for="content">Контент сторінки</label>
                                     <textarea name="page_description[<?= $lang['id'] ?>][content]"
                                               class="form-control editor" id="content" rows="3"
-                                              placeholder="Контент страницы"><?= h($page[$lang['id']]['content']) ?></textarea>
+                                              placeholder="Контент сторінки"><?= h($page[$lang['id']]['content']) ?></textarea>
                                 </div>
 
                             </div>
@@ -58,7 +58,7 @@
                 <!-- /.card -->
             </div>
 
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button type="submit" class="btn btn-primary">Зберегти</button>
 
         </form>
 

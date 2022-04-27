@@ -24,7 +24,7 @@ class OrderController extends AppController
 
         $orders = $this->model->get_orders($start, $perpage, $status);
         $title = 'Список заказов';
-        $this->setMeta("Админка :: {$title}");
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'orders', 'pagination', 'total'));
     }
 
@@ -46,7 +46,7 @@ class OrderController extends AppController
             throw new \Exception('Not found order', 404);
         }
         $title = "Заказ № {$id}";
-        $this->setMeta("Админка :: {$title}");
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'order'));
     }
 

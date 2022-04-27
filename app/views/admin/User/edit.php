@@ -21,14 +21,14 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="required" for="name">Имя</label>
+                    <label class="required" for="name">Им'я</label>
                     <input type="text" name="name" class="form-control" id="name" value="<?= h($user['name']) ?>">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="required" for="address">Адрес</label>
+                    <label class="required" for="address">Адреса</label>
                     <input type="text" name="address" class="form-control" id="address" value="<?= h($user['address']) ?>">
                 </div>
             </div>
@@ -38,13 +38,13 @@
                     <label class="required" for="role">Роль</label>
                     <select name="role" id="role" class="form-control">
                         <option value="user" <?php if ($user['role'] == 'user') echo 'selected' ?>>Пользователь</option>
-                        <option value="admin" <?php if ($user['role'] == 'admin') echo 'selected' ?>>Администратор</option>
+                        <option value="admin" <?php if ($user['role'] == 'admin') echo 'selected' ?>>Адміністратор</option>
                     </select>
                 </div>
             </div>
 
             <div class="col">
-                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <button type="submit" class="btn btn-primary">Зберегти</button>
             </div>
 
         </form>

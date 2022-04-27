@@ -20,8 +20,8 @@ class UserController extends AppController
         $start = $pagination->getStart();
 
         $users = $this->model->get_users($start, $perpage);
-        $title = 'Список пользователей';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Список користувачів';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'users', 'pagination', 'total'));
     }
 
@@ -40,8 +40,8 @@ class UserController extends AppController
         $start = $pagination->getStart();
 
         $orders = $this->model->get_user_orders($start, $perpage, $id);
-        $title = 'Профиль пользователя';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Профіль користувача';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'user', 'pagination', 'total', 'orders'));
     }
 
@@ -55,15 +55,15 @@ class UserController extends AppController
             } else {
                 $this->model->attributes['password'] = password_hash($this->model->attributes['password'], PASSWORD_DEFAULT);
                 if ($this->model->save('user')) {
-                    $_SESSION['success'] = 'Пользователь добавлен';
+                    $_SESSION['success'] = 'Користувач доданий';
                 } else {
-                    $_SESSION['errors'] = 'Ошибка добавления пользователя';
+                    $_SESSION['errors'] = 'Помилка додавання користувача';
                 }
             }
             redirect();
         }
-        $title = 'Новый пользователь';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Новий користувач';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title'));
     }
 
@@ -88,16 +88,16 @@ class UserController extends AppController
                     $this->model->attributes['password'] = password_hash($this->model->attributes['password'], PASSWORD_DEFAULT);
                 }
                 if ($this->model->update('user', $id)) {
-                    $_SESSION['success'] = 'Данные пользователя обновлены. Перезайдите, если вы обновляли свои данные';
+                    $_SESSION['success'] = 'Дані користувача оновлено. Перезайдіть, якщо ви оновлювали свої дані';
                 } else {
-                    $_SESSION['errors'] = 'Ошибка обновления профиля пользователя';
+                    $_SESSION['errors'] = 'Помилка оновлення профілю користувача';
                 }
             }
             redirect();
         }
 
-        $title = 'Редактирование пользователя';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Редагування користувача';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'user'));
     }
 
@@ -110,9 +110,9 @@ class UserController extends AppController
         $this->layout = 'login';
         if (!empty($_POST)) {
             if ($this->model->login(true)) {
-                $_SESSION['success'] = 'Вы успешно авторизованы';
+                $_SESSION['success'] = 'Ви успішно авторизовані';
             } else {
-                $_SESSION['errors'] = 'Логин/пароль введены неверно';
+                $_SESSION['errors'] = 'Логін/пароль введено невірно';
             }
             if ($this->model::isAdmin()) {
                 redirect(ADMIN);

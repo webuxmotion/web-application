@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button type="submit" class="btn btn-primary">Зберегти</button>
 
         </form>
 

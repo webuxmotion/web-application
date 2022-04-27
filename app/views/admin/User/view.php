@@ -14,35 +14,35 @@
                     <td><?= $user['email'] ?></td>
                 </tr>
                 <tr>
-                    <td>Имя</td>
+                    <td>Ім'я</td>
                     <td><?= $user['name'] ?></td>
                 </tr>
                 <tr>
-                    <td>Адрес</td>
+                    <td>Адреса</td>
                     <td><?= $user['address'] ?></td>
                 </tr>
                 <tr>
                     <td>Роль</td>
-                    <td><?= $user['role'] == 'user' ? 'Пользователь' : 'Администратор' ?></td>
+                    <td><?= $user['role'] == 'user' ? 'Пользователь' : 'Адміністратор' ?></td>
                 </tr>
                 </tbody>
             </table>
-            <a href="<?= ADMIN ?>/user/edit?id=<?= $user['id'] ?>" class="btn btn-flat btn-secondary">Редактировать профиль</a>
+            <a href="<?= ADMIN ?>/user/edit?id=<?= $user['id'] ?>" class="btn btn-flat btn-secondary">Редагувати профіль</a>
         </div>
     </div>
 
     <div class="card-body">
         <?php if (!empty($orders)): ?>
-            <h3>Заказы пользователя</h3>
+            <h3>Замовлення користувача</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>ID заказа</th>
+                        <th>ID замовлення</th>
                         <th>Статус</th>
-                        <th>Создан</th>
-                        <th>Изменен</th>
-                        <th>Сумма</th>
+                        <th>Створено</th>
+                        <th>Змінено</th>
+                        <th>Сума</th>
                         <td width="50"><i class="fas fa-pencil-alt"></i></td>
                     </tr>
                     </thead>
@@ -69,7 +69,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p><?= count($orders) ?> заказ(ов) из: <?= $total; ?></p>
+                    <p><?= count($orders) ?> замовлення(нь) з: <?= $total; ?></p>
                     <?php if ($pagination->countPages > 1): ?>
                         <?= $pagination; ?>
                     <?php endif; ?>
@@ -77,7 +77,7 @@
             </div>
 
         <?php else: ?>
-            <p>Пользователь пока не делал заказов...</p>
+            <p>Користувач поки що не робив замовлень...</p>
         <?php endif; ?>
 
     </div>

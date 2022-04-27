@@ -8,7 +8,7 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3><?= $orders ?></h3>
-                            <p>Заказов</p>
+                            <p>Замовлень</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-shopping-bag"></i>
@@ -22,7 +22,7 @@
                     <div class="small-box bg-danger">
                         <div class="inner">
                             <h3><?= $new_orders ?></h3>
-                            <p>Новых заказов</p>
+                            <p>Нових замовлень</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-luggage-cart"></i>
@@ -36,7 +36,7 @@
                     <div class="small-box bg-warning">
                         <div class="inner">
                             <h3><?= $users ?></h3>
-                            <p>Пользователей</p>
+                            <p>Користувачів</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-user-friends"></i>
@@ -50,7 +50,7 @@
                     <div class="small-box bg-success">
                         <div class="inner">
                             <h3><?= $products ?></h3>
-                            <p>Товаров</p>
+                            <p>Товарів</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-barcode"></i>

@@ -35,20 +35,20 @@ class Product extends AppModel
     {
         $errors = '';
         if (!is_numeric(post('price'))) {
-            $errors .= "Цена должна быть числовым значением<br>";
+            $errors .= "Ціна має бути числовим значенням<br>";
         }
         if (!is_numeric(post('old_price'))) {
-            $errors .= "Старая цена должна быть числовым значением<br>";
+            $errors .= "Стара ціна має бути числовим значенням<br>";
         }
 
         foreach ($_POST['product_description'] as $lang_id => $item) {
             $item['title'] = trim($item['title']);
             $item['exerpt'] = trim($item['exerpt']);
             if (empty($item['title'])) {
-                $errors .= "Не заполнено Наименование во вкладке {$lang_id}<br>";
+                $errors .= "Не заповнено Найменування у вкладці {$lang_id}<br>";
             }
             if (empty($item['exerpt'])) {
-                $errors .= "Не заполнено Краткое описание во вкладке {$lang_id}<br>";
+                $errors .= "Не заповнено Короткий опис у вкладці {$lang_id}<br>";
             }
         }
 

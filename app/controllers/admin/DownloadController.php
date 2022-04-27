@@ -24,7 +24,7 @@ class DownloadController extends AppController
 
         $downloads = $this->model->get_downloads($lang, $start, $perpage);
         $title = 'Файлы (цифровые товары)';
-        $this->setMeta("Админка :: {$title}");
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'downloads', 'pagination', 'total'));
     }
 
@@ -45,7 +45,7 @@ class DownloadController extends AppController
             redirect();
         }
         $title = 'Добавление файла (цифрового товара)';
-        $this->setMeta("Админка :: {$title}");
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title'));
     }
 

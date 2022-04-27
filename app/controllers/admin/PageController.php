@@ -23,8 +23,8 @@ class PageController extends AppController
         $start = $pagination->getStart();
 
         $pages = $this->model->get_pages($lang, $start, $perpage);
-        $title = 'Список страниц';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Список сторінок';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'pages', 'pagination', 'total'));
     }
 
@@ -32,9 +32,9 @@ class PageController extends AppController
     {
         $id = get('id');
         if ($this->model->deletePage($id)) {
-            $_SESSION['success'] = 'Страница удалена';
+            $_SESSION['success'] = 'Сторінка видалена';
         } else {
-            $_SESSION['errors'] = 'Ошибка удаления страницы';
+            $_SESSION['errors'] = 'Помилка видалення сторінки';
         }
         redirect();
     }
@@ -44,16 +44,16 @@ class PageController extends AppController
         if (!empty($_POST)) {
             if ($this->model->page_validate()) {
                 if ($this->model->save_page()) {
-                    $_SESSION['success'] = 'Страница добавлена';
+                    $_SESSION['success'] = 'Сторінка додана';
                 } else {
-                    $_SESSION['errors'] = 'Ошибка добавления страницы';
+                    $_SESSION['errors'] = 'Помилка додавання сторінки';
                 }
             }
             redirect();
         }
 
-        $title = 'Новая страница';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Нова сторінка';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title'));
     }
 
@@ -64,9 +64,9 @@ class PageController extends AppController
         if (!empty($_POST)) {
             if ($this->model->page_validate()) {
                 if ($this->model->update_page($id)) {
-                    $_SESSION['success'] = 'Страница сохранена';
+                    $_SESSION['success'] = 'Сторінку збережено';
                 } else {
-                    $_SESSION['errors'] = 'Ошибка обновления страницы';
+                    $_SESSION['errors'] = 'Помилка поновлення сторінки';
                 }
             }
             redirect();
@@ -76,8 +76,8 @@ class PageController extends AppController
         if (!$page) {
             throw new \Exception('Not found page', 404);
         }
-        $title = 'Редактирование страницы';
-        $this->setMeta("Админка :: {$title}");
+        $title = 'Редагування сторінки';
+        $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'page'));
     }
 

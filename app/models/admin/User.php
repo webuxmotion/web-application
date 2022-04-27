@@ -27,8 +27,8 @@ class User extends \app\models\User
     public array $labels = [
         'email' => 'E-mail',
         'password' => 'Пароль',
-        'name' => 'Имя',
-        'address' => 'Адрес',
+        'name' => 'Им\'я',
+        'address' => 'Адреса',
         'role' => 'Роль',
     ];
 
@@ -54,7 +54,7 @@ class User extends \app\models\User
         }
         $user = R::findOne('user', 'email = ?', [$this->attributes['email']]);
         if ($user) {
-            $this->errors['unique'][] = 'Этот email уже используется другим пользователем';
+            $this->errors['unique'][] = 'Цей email вже використовується іншим користувачем';
             return false;
         }
         return true;

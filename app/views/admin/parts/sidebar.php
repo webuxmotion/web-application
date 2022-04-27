@@ -38,56 +38,56 @@
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Главная</p>
+                        <p>Головна</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>/category" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
-                        <p>Категории</p>
+                        <p>Категорії</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>/product" class="nav-link">
                         <i class="nav-icon fas fa-barcode"></i>
-                        <p>Товары</p>
+                        <p>Товари</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>/download" class="nav-link">
                         <i class="nav-icon fas fa-file-upload"></i>
-                        <p>Файлы</p>
+                        <p>Файли</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>/order" class="nav-link">
                         <i class="nav-icon fas fa-shopping-bag"></i>
-                        <p>Заказы</p>
+                        <p>Замовлення</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>/user" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
-                        <p>Пользователи</p>
+                        <p>Користувачі</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>/cache" class="nav-link">
                         <i class="nav-icon fas fa-database"></i>
-                        <p>Управление кэшем</p>
+                        <p>Керування кешем</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="<?= ADMIN ?>/page" class="nav-link">
                         <i class="nav-icon far fa-file-alt"></i>
-                        <p>Страницы</p>
+                        <p>Сторінки</p>
                     </a>
                 </li>
 
