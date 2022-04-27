@@ -56,34 +56,34 @@ use wfm\View;
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="section-title">Наши преимущества</h3>
+                <h3 class="section-title"><?=__('tpl_services_title')?></h3>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="service-item">
                     <p class="text-center"><i class="fas fa-shipping-fast"></i></p>
-                    <p>Прямые поставки от производителей</p>
+                    <p><?=__('tpl_services_card_1')?></p>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="service-item">
                     <p class="text-center"><i class="fas fa-cubes"></i></p>
-                    <p>Широкий ассортимент товара</p>
+                    <p><?=__('tpl_services_card_2')?></p>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="service-item">
                     <p class="text-center"><i class="fas fa-hand-holding-usd"></i></p>
-                    <p>Приятные и конкуретные цены</p>
+                    <p><?=__('tpl_services_card_3')?></p>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="service-item">
                     <p class="text-center"><i class="fas fa-user-cog"></i></p>
-                    <p>Профессиональная консультация и сервис</p>
+                    <p><?=__('tpl_services_card_4')?></p>
                 </div>
             </div>
 

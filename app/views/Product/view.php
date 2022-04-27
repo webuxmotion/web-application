@@ -21,8 +21,8 @@ use wfm\View;
             <h1><?= $product['title'] ?></h1>
 
             <ul class="list-unstyled">
-                <li><i class="fas fa-check text-success"></i> В наличии</li>
-                <li><i class="fas fa-shipping-fast text-muted"></i> Ожидается</li>
+                <li><i class="fas fa-check text-success"></i> <?=__('product_view_in_stock')?></li>
+                <li><i class="fas fa-shipping-fast text-muted"></i> <?=__('product_view_expected')?></li>
                 <li><i class="fas fa-hand-holding-usd"></i> <span class="product-price">
                         <?php if ($product['old_price']): ?>
                             <small>$<?= $product['old_price'] ?></small>

@@ -20,9 +20,8 @@ use wfm\View;
                 <div class="col-md-3 col-6">
                     <h4><?php __('tpl_work_hours'); ?></h4>
                     <ul class="list-unstyled">
-                        <li>г. Киев, ул. Пушкина, 10</li>
-                        <li>пн-вс: 9:00 - 18:00</li>
-                        <li>без перерыва</li>
+                        <li>м. Іршава</li>
+                        <li>пн-пт: 16:00 - 18:00</li>
                     </ul>
                 </div>
 
