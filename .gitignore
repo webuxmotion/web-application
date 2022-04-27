@@ -4,3 +4,4 @@
 /tmp/cache/*
 !/tmp/cache/.gitkeep
 .env
+/public/uploads/

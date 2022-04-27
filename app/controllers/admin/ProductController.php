@@ -83,4 +83,10 @@ class ProductController extends AppController
         die;
     }
 
+    public function deleteAction() {
+        $id = get('id');
+        $this->model->delete_product($id);
+        redirect();
+    }
+
 }

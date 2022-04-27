@@ -208,4 +208,11 @@ class Product extends AppModel
         return R::getCol("SELECT img FROM product_gallery WHERE product_id = ?", [$id]);
     }
 
+    public function delete_product($id) {
+        $book = R::load('product', $id);
+        R::trash( $book );
+        R::exec("DELETE FROM product_description WHERE product_id = ?", [$id]);
+        R::exec("DELETE FROM product_gallery WHERE product_id = ?", [$id]);
+    }
+
 }
