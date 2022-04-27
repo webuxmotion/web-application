@@ -21,18 +21,18 @@ class Download extends AppModel
         foreach ($_POST['download_description'] as $lang_id => $item) {
             $item['name'] = trim($item['name']);
             if (empty($item['name'])) {
-                $errors .= "Не заполнено наименование {$lang_id}<br>";
+                $errors .= "Не заполнено Найменування {$lang_id}<br>";
             }
         }
 
         if (empty($_FILES) || $_FILES['file']['error']) {
-            $errors .= "Ошибка загрузки файла<br>";
+            $errors .= "Помилка завантаження файлу<br>";
         } else {
             $extensions = ['jpg', 'jpeg', 'png', 'zip', 'pdf', 'txt'];
             $parts = explode('.', $_FILES['file']['name']);
             $ext = end($parts);
             if (!in_array($ext, $extensions)) {
-                $errors .= "Допустимые для загрузки расширения: jpg, jpeg, png, zip, pdf, txt<br>";
+                $errors .= "Допустимі для завантаження розширення: jpg, jpeg, png, zip, pdf, txt<br>";
             }
         }
 

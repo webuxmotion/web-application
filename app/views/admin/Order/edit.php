@@ -6,7 +6,7 @@
             <table class="table text-start table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col">Наименование</th>
+                    <th scope="col">Найменування</th>
                     <th scope="col">Цена</th>
                     <th scope="col">Кол-во</th>
                     <th scope="col">Сумма</th>

@@ -10,10 +10,10 @@
                 <div class="form-group row">
                     <label for="name" class="col-sm-3 col-form-label required">
                         <img src="<?= PATH ?>/assets/img/lang/<?= $k ?>.png" alt="">
-                        Наименование
+                        Найменування
                     </label>
                     <div class="col-sm-9">
-                        <input type="text" name="download_description[<?= $lang['id'] ?>][name]" class="form-control" id="name" placeholder="Наименование файла">
+                        <input type="text" name="download_description[<?= $lang['id'] ?>][name]" class="form-control" id="name" placeholder="Найменування файлу">
                     </div>
 
                 </div>
@@ -22,7 +22,7 @@
 
             <hr>
 
-            <span class="text-info">Допустимые для загрузки расширения: jpg, jpeg, png, zip, pdf, txt</span>
+            <span class="text-info">Допустимі для завантаження розширення: jpg, jpeg, png, zip, pdf, txt</span>
             <div class="input-group">
                 <div class="custom-file">
                     <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
