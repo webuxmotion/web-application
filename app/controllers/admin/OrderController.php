@@ -23,7 +23,7 @@ class OrderController extends AppController
         $start = $pagination->getStart();
 
         $orders = $this->model->get_orders($start, $perpage, $status);
-        $title = 'Список заказов';
+        $title = 'Список замовлень';
         $this->setMeta("Адмінка :: {$title}");
         $this->set(compact('title', 'orders', 'pagination', 'total'));
     }
@@ -35,9 +35,9 @@ class OrderController extends AppController
         if (isset($_GET['status'])) {
             $status = get('status');
             if ($this->model->change_status($id, $status)) {
-                $_SESSION['success'] = 'Статус заказа изменен';
+                $_SESSION['success'] = 'Статус замовлення змінено';
             } else {
-                $_SESSION['errors'] = 'Ошибка изменения статуса заказа';
+                $_SESSION['errors'] = 'Помилка зміни статусу замовлення';
             }
         }
 

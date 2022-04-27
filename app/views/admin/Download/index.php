@@ -2,7 +2,7 @@
 <div class="card">
 
     <div class="card-header">
-        <a href="<?= ADMIN ?>/download/add" class="btn btn-default btn-flat"><i class="fas fa-plus"></i> Загрузить файл</a>
+        <a href="<?= ADMIN ?>/download/add" class="btn btn-default btn-flat"><i class="fas fa-plus"></i> Завантажити файл</a>
     </div>
 
     <div class="card-body">
@@ -11,8 +11,8 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Наименование</th>
-                    <th>Оригинальное имя</th>
+                    <th>Найменування</th>
+                    <th>Оригінальне ім'я</th>
                     <td width="50"><i class="far fa-trash-alt"></i></td>
                 </tr>
                 </thead>
@@ -37,7 +37,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p><?= count($downloads) ?> файл(ов) из: <?= $total; ?></p>
+                    <p><?= count($downloads) ?> файл(ів) з: <?= $total; ?></p>
                     <?php if ($pagination->countPages > 1): ?>
                         <?= $pagination; ?>
                     <?php endif; ?>
@@ -45,7 +45,7 @@
             </div>
 
         <?php else: ?>
-            <p>Файлов для загрузки не найдено...</p>
+            <p>Файлів для завантаження не знайдено...</p>
         <?php endif; ?>
 
     </div>
