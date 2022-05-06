@@ -3,9 +3,9 @@
 
 namespace app\controllers;
 
-use app\models\User;
 use wfm\App;
 use wfm\Pagination;
+use app\models\User;
 
 /** @property User $model */
 class UserController extends AppController
@@ -82,6 +82,11 @@ class UserController extends AppController
 
         if (!empty($_POST)) {
             if ($this->model->login()) {
+
+                $email = post('email');
+                Telegram::getInstance()
+                    ->sendMessage($_ENV['BOT_CHAT_ID'], "User with email: {$email} was loginned!");
+
                 $_SESSION['success'] = ___('user_login_success_login');
                 redirect(base_url());
             } else {
