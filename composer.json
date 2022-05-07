@@ -11,6 +11,7 @@
     "phpmailer/phpmailer": "^6.5",
     "swiftmailer/swiftmailer": "^6.2",
     "vlucas/phpdotenv": "^4.0",
-    "telegram-bot/api": "^2.3"
+    "telegram-bot/api": "^2.3",
+    "firebase/php-jwt": "^5.2"
   }
 }
