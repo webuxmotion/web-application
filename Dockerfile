@@ -8,6 +8,8 @@ RUN apt-get update && \
     apt-get install -y \
         zlib1g-dev
 
+RUN docker-php-ext-configure gd --with-jpeg
+
 RUN docker-php-ext-install gd
 
 

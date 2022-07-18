@@ -6,6 +6,7 @@ namespace app\controllers;
 use wfm\App;
 use wfm\Pagination;
 use app\models\User;
+use app\services\Telegram;
 
 /** @property User $model */
 class UserController extends AppController
